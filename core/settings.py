@@ -97,20 +97,20 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-if DEBUG:
+# if DEBUG:
 
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'portfolio',
-            'USER': 'postgres',
-            'PASSWORD': '123456',
-            'HOST': 'localhost',
-            'PORT': '5433',
-        }
-    }
-else:
-    DATABASES = {
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': 'portfolio',
+#             'USER': 'postgres',
+#             'PASSWORD': '123456',
+#             'HOST': 'localhost',
+#             'PORT': '5433',
+#         }
+#     }
+# else:
+DATABASES = {
         'default': dj_database_url.config(
             # Feel free to alter this value to suit your needs.
             default=env('DATABASE_URL'),
