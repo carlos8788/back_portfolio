@@ -111,7 +111,7 @@ else:
     DATABASES = {
         'default': dj_database_url.config(
             # Feel free to alter this value to suit your needs.
-            default='postgresql://postgres:postgres@localhost:5432/mysite',
+            default=env('DATABASE_URL'),
             conn_max_age=600
         )
     }
@@ -171,7 +171,7 @@ if ORIGIN:
     CSRF_TRUSTED_ORIGINS = [ORIGIN]
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:5173',
+    'https://carlos8788.github.io/portfolio_front/',
 ]
 
 REST_FRAMEWORK = {
@@ -186,5 +186,5 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173',
+    'https://carlos8788.github.io/portfolio_front/',
 ]
