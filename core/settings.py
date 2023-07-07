@@ -112,6 +112,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 #         }
 #     }
 # else:
+print(env('DATABASE_URL'))
 DATABASES = {
         'default': dj_database_url.config(
             # Feel free to alter this value to suit your needs.
