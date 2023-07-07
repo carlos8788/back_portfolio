@@ -35,7 +35,7 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = True
 # print(DEBUG)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://backend-portfolio-kld8.onrender.com/', 'backend-portfolio-kld8.onrender.com']
 
 if not DEBUG:
     RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
