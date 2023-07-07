@@ -31,7 +31,8 @@ SECRET_KEY = env('SECRET_KEY')
 # env_debug = env.bool('DEBUG')
 # print(env_debug)
 
-DEBUG = 'RENDER' not in os.environ
+# DEBUG = 'RENDER' not in os.environ
+DEBUG = True
 # print(DEBUG)
 
 ALLOWED_HOSTS = []
