@@ -35,7 +35,8 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = True
 # print(DEBUG)
 
-ALLOWED_HOSTS = ['https://backend-portfolio-kld8.onrender.com/', 'backend-portfolio-kld8.onrender.com']
+ALLOWED_HOSTS = ['https://backend-portfolio-kld8.onrender.com/',
+                 'backend-portfolio-kld8.onrender.com']
 
 if not DEBUG:
     RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
@@ -98,7 +99,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 # CAMBIAR LUEGO
-# if DEBUG: 
+# if DEBUG:
 
 #     DATABASES = {
 #         'default': {
@@ -157,12 +158,12 @@ STATIC_URL = 'static/'
 
 # if not DEBUG:
 # DEBUG:
-    # Tell Django to copy statics to the `staticfiles` directory
-    # in your application directory on Render.
+# Tell Django to copy statics to the `staticfiles` directory
+# in your application directory on Render.
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-    # Turn on WhiteNoise storage backend that takes care of compressing static files
-    # and creating unique names for each version so they can safely be cached forever.
+# Turn on WhiteNoise storage backend that takes care of compressing static files
+# and creating unique names for each version so they can safely be cached forever.
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
@@ -175,7 +176,7 @@ if ORIGIN:
     CSRF_TRUSTED_ORIGINS = [ORIGIN]
 
 CORS_ORIGIN_WHITELIST = [
-    'https://carlos8788.github.io/portfolio_front/',
+    'https://carlos8788.github.io',
 ]
 
 REST_FRAMEWORK = {
@@ -190,5 +191,5 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    'https://carlos8788.github.io/portfolio_front/',
+    'https://carlos8788.github.io',
 ]
