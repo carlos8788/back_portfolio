@@ -12,7 +12,7 @@ SECRET_KEY = env('SECRET_KEY')
 
 
 DEBUG = 'RENDER' not in os.environ
-DEBUG = True
+# DEBUG = True
 
 
 ALLOWED_HOSTS = []
