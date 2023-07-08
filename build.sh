@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # exit on error
+mkdir staticfiles
 set -o errexit
 
 poetry install
