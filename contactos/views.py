@@ -13,13 +13,16 @@ class ContactoPagination(PageNumberPagination):
 
 @permission_classes([IsAuthenticatedOrReadOnly])
 class ContactoListCreateView(generics.ListCreateAPIView):
-    queryset = Contacto.objects.all()
+    queryset = Contacto.objects.all().order_by('id')
+    print(queryset)
     serializer_class = ContactoSerializer
     pagination_class = ContactoPagination
 
     def get_permissions(self):
         if self.request.method == 'POST':
+            print(self.request)
             return [AllowAny()]
+        print("Request method is not POST")
         return super().get_permissions()
 
 

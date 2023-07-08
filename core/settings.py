@@ -12,8 +12,7 @@ SECRET_KEY = env('SECRET_KEY')
 
 
 DEBUG = 'RENDER' not in os.environ
-# DEBUG = True
-
+DEBUG = False
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 ALLOWED_HOSTS = [RENDER_EXTERNAL_HOSTNAME]
@@ -70,21 +69,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'core.wsgi.application'
 
 
-
-# if DEBUG:
-
-    # DATABASES = {
-    #     'default': {
-    #         'ENGINE': 'django.db.backends.postgresql',
-    #         'NAME': 'portfolio',
-    #         'USER': 'postgres',
-    #         'PASSWORD': '123456',
-    #         'HOST': 'localhost',
-    #         'PORT': '5433',
-    #     }
-    # }
-# else:
-
 DATABASES = {
             'default': dj_database_url.config(
                 # Feel free to alter this value to suit your needs.
@@ -129,13 +113,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ORIGIN = os.environ.get('ORIGIN')
-if ORIGIN:
-    CSRF_TRUSTED_ORIGINS = [ORIGIN]
 
 CORS_ORIGIN_WHITELIST = [
-    'https://carlos8788.github.io',
+    env('ORIGIN'), env('ORIGIN_LOCAL')
 ]
+CORS_ALLOWED_ORIGINS = CORS_ORIGIN_WHITELIST
 
 REST_FRAMEWORK = {
 
@@ -147,6 +129,3 @@ REST_FRAMEWORK = {
 
 }
 
-CORS_ALLOWED_ORIGINS = [
-    'https://carlos8788.github.io',
-]
