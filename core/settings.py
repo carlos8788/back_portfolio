@@ -12,15 +12,17 @@ SECRET_KEY = env('SECRET_KEY')
 
 
 DEBUG = 'RENDER' not in os.environ
-
+DEBUG = True
 
 
 ALLOWED_HOSTS = []
-if not DEBUG:
-    RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-    print(RENDER_EXTERNAL_HOSTNAME)
-    if RENDER_EXTERNAL_HOSTNAME:
-        ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+# if not DEBUG:
+#     RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+#     print(RENDER_EXTERNAL_HOSTNAME)
+#     if RENDER_EXTERNAL_HOSTNAME:
+#         ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 
 # Application definition
@@ -75,21 +77,21 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 
 
-if DEBUG:
+# if DEBUG:
 
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'portfolio',
-            'USER': 'postgres',
-            'PASSWORD': '123456',
-            'HOST': 'localhost',
-            'PORT': '5433',
-        }
-    }
-else:
+    # DATABASES = {
+    #     'default': {
+    #         'ENGINE': 'django.db.backends.postgresql',
+    #         'NAME': 'portfolio',
+    #         'USER': 'postgres',
+    #         'PASSWORD': '123456',
+    #         'HOST': 'localhost',
+    #         'PORT': '5433',
+    #     }
+    # }
+# else:
 
-    DATABASES = {
+DATABASES = {
             'default': dj_database_url.config(
                 # Feel free to alter this value to suit your needs.
                 default=env('DATABASE_URL'),
