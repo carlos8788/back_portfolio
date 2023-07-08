@@ -5,7 +5,8 @@ from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly, IsAu
 from rest_framework.decorators import permission_classes
 from rest_framework import permissions
 from rest_framework.pagination import PageNumberPagination
-
+from rest_framework.decorators import action
+from rest_framework.response import Response
 
 class ContactoPagination(PageNumberPagination):
     page_size = 5
@@ -24,5 +25,9 @@ class ContactoListCreateView(generics.ListCreateAPIView):
             return [AllowAny()]
         print("Request method is not POST")
         return super().get_permissions()
-
+    
+    @action(detail=True, methods=['post'])
+    def custom_action(self, request, pk=None):
+        # Lógica de tu acción personalizada
+        return Response({'message': 'Custom action executed'})
 

@@ -2,3 +2,6 @@
 .env
 __pycache__
 db.sqlite3
+staticfiles/admin
+staticfiles/rest_framework
+staticfiles/staticfiles.json

@@ -28,8 +28,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # APPS 3RD
-    'corsheaders',
     'rest_framework',
+    'corsheaders',
     # MY APPS
     'home',
     'contactos'
@@ -130,3 +130,11 @@ REST_FRAMEWORK = {
 
 }
 
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS',
+]
