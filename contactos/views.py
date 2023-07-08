@@ -29,6 +29,6 @@ class ContactoListCreateView(generics.ListCreateAPIView):
     
     @action(detail=True, methods=['post'])
     def custom_action(self, request, pk=None):
-        # Lógica de tu acción personalizada
+        
         return Response({'message': 'Custom action executed'})
 

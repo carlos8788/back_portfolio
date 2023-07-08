@@ -18,7 +18,7 @@ RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 ALLOWED_HOSTS = [RENDER_EXTERNAL_HOSTNAME]
 
 
-# Application definition
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -71,7 +71,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
             'default': dj_database_url.config(
-                # Feel free to alter this value to suit your needs.
+                
                 default=env('DATABASE_URL'),
                 conn_max_age=600
             )
